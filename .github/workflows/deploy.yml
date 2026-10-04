@@ -1,0 +1,19 @@
+name: Production Deployment Template
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: 'Target Environment'
+        required: true
+        default: 'production'
+
+jobs:
+  deploy:
+    name: Deploy FastAPI & React Stack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remote Docker Compose Deploy
+        run: |
+          echo "[Example Workflow] Manual production trigger via workflow_dispatch."
