@@ -26,4 +26,4 @@ jobs:
       - name: Run Pytest
         run: |
           cd backend
-          pytest
+          python -m pytest
